@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search({ search, setSearch}) {
+function Search({ search, setSearch}) {                                  // destructured props passed as arguments to Search component
 
   
 
@@ -9,7 +9,7 @@ function Search({ search, setSearch}) {
       <input
         type="text"
         placeholder="Search your Recent Transactions"
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => setSearch(e.target.value)}                                     //targets values after each key stroke
         value={search}
       />
       <i className="circular search link icon"></i>

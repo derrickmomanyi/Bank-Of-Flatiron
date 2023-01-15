@@ -7,10 +7,10 @@ import AddTransactionForm from "./AddTransactionForm";
 
 function AccountContainer() {
 
-  const [transactions, setTransactions] = useState([])
+  const [transactions, setTransactions] = useState([])                            //use state hook to update the transaction and search fields
   const [search, setSearch] = useState("")
 
-  useEffect(() => {
+  useEffect(() => {                                                                //useEffect hook to fetch our data from server
     fetch("http://localhost:8001/transactions")
     .then((res)=> res.json())
     .then((data)=> setTransactions(data))
@@ -18,7 +18,7 @@ function AccountContainer() {
 
   console.log(transactions)
 
-  function addTransaction(newTransaction){
+  function addTransaction(newTransaction){                                            //function to add our new transaction from AddTransactionForm component input form
     const updatedTransaction = [...transactions, newTransaction]
     setTransactions(updatedTransaction)
   }

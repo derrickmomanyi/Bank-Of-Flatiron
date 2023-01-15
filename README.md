@@ -1,135 +1,81 @@
 # Bank of Flatiron
 
+## Table of Contents
+This README consists of the Project Requirements, Setup, Author, Licences and a few explanations
+
 Welcome to the Bank of Flatiron, where you can trust us with all your financial
-data! Use the below gif as an example of how the app should function.
+data!
 
-![demo](https://curriculum-content.s3.amazonaws.com/phase-2/phase-2-code-challenge-bank-of-flatiron/demo.gif)
 
-> To view in VSCode, right click on the README.md file and select "Open Preview".
 
-## Instructions
+## Project Requirements
 
-For this project, you’ll be building out a React application that displays a
-list of your recent bank transactions, among other features.
-
-Part of what this code challenge is testing is your ability to follow given
-instructions. While you will definitely have a significant amount of freedom in
-how you implement the features, be sure to carefully read the directions for
-setting up the application.
-
-## Setup
-
-After unbundling the project:
-
-1. Run `npm install` in your terminal.
-2. Run `npm run server`. This will run your backend on port `8001`.
-3. In a new terminal, run `npm start`. This will run your React app on port `8000`.
-
-Make sure to open
-[http://localhost:8001/transactions](http://localhost:8001/transactions) in the
-browser to verify that your backend is working before you proceed!
-
-The app uses [Semantic UI](https://semantic-ui.com/) for styling. If you see any
-unfamiliar classNames on some components, don't sweat! That's coming from
-Semantic UI and you shouldn't need to touch it.
-
-If you are unfamiliar with HTML tables, take a look at the
-[docs with an example here](https://www.w3schools.com/html/html_tables.asp)
-
-## Endpoints
-
-The base URL for your backend is: `http://localhost:8001`
-
-## Core Deliverables
+For this project, I’ll be building out a React application that displays a
+list of recent bank transactions, among other features.
 
 As a user, I should be able to:
 
 - See a table of the transactions.
+
 - Fill out and submit the form to add a new transaction. This should add the new
   transaction to the table **as well as post the new transaction to the backend
   API for persistence**.
+
 - Filter transactions by typing into the search bar. Only transactions with a
   description matching the search term should be shown in the transactions
   table.
 
-### Endpoints for Core Deliverables
 
-#### GET /transactions
 
-Example Response:
+## Setup
 
-```json
-[
-  {
-    "id": 1,
-    "date": "2019-12-01",
-    "description": "Paycheck from Bob's Burgers",
-    "category": "Income",
-    "amount": 1000
-  },
-  {
-    "id": 2,
-    "date": "2019-12-01",
-    "description": "South by Southwest Quinoa Bowl at Fresh & Co",
-    "category": "Food",
-    "amount": -10.55
-  }
-]
-```
+JSON server used to update the transactions;
 
-#### POST `/transactions`
 
-Required Headers:
+Go to [http://localhost:8001/transactions](http://localhost:8001/transactions) 
 
-```js
-{
-  "Content-Type": "application/json"
-}
-```
+## Explanation
 
-Request Object:
+The step by step thought process has been commented in the respective components
 
-```json
-{
-  "date": "string",
-  "description": "string",
-  "category": "string",
-  "amount": number
-}
-```
+The Component Hierarchy is;
 
-Example Response:
+App
+   ├──AccountContainer
+      ├── AddTansactionForm
+      └── Search
+      └── TransactionList
+          ├── Transactions
 
-```json
-{
-  "id": 1,
-  "date": "2019-12-01",
-  "description": "Paycheck from Bob's Burgers",
-  "category": "Income",
-  "amount": 1000
-}
-```
 
-## Advanced Deliverables
+1. Displayed the data to the Transactions component by passing props through AccountContainer => TransactionList => Transaction
+Mapped the data{key, date, category, description, amount} to the table using .map() method completing the first deliverable
 
-These deliverables are not required to pass the code challenge, but if you have
-the extra time, or even after the code challenge, they are a great way to
-stretch your skills.
 
-> Note: If you are going to attempt these advanced deliverables, please be sure
-> to have a working commit with all the Core Deliverables first!
+2. Added functionality to the form, added onChange event to track {date, category, description, amount} values after each key stroke, added a post method to add our data to backend server completing the second deliverable
 
-As a user, I should be able to:
+3. Added onChange event to track values after each keystroke for our search functionality on the Search component. Passed search state variables as props to the Transaction component through AccountContainer => TransactionList => Transaction, filtered the values from the category and description fields
 
-- Sort transactions alphabetically by category or description.
-- Delete a transaction which will remove it from the table and delete it from the backend.
 
-### Endpoints for Advanced Deliverables
+## LINK
+Here lies the link to the live site https://serene-bombolone-24729d.netlify.app/
 
-#### DELETE /transactions/:id
+## Author
+Derrick Momanyi
 
-Example Response:
+Github: @derrickmomanyi
 
-```json
-{}
-```
+## License
+Copyright © 2022 Derrick Momanyi This project is MORINGA SCHOOL licensed.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License
+
+
+    
+
+
+
+
+
