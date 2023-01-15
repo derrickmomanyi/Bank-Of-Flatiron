@@ -1,6 +1,6 @@
 import React from "react";
 
-function Transaction({transactions, search}) {                                  // // destructured props passed as arguments to Transaction component
+function Transaction({transactions, search }) {                                  // // destructured props passed as arguments to Transaction component
   return (
     <>
     {transactions
@@ -8,11 +8,7 @@ function Transaction({transactions, search}) {                                  
       .filter((transaction) =>
         transaction.description.toLowerCase().includes(search.toLowerCase())                    //filter description details on the search bar
         )
-
-      .filter((transaction) =>
-        transaction.category.toLowerCase().includes(search.toLowerCase())                     //filter category details on the search bar
-        )
-      
+           
       .map((transaction) =>                                                                     //display transactions data in a table
           <tr key= {transaction.id}>
             <td>{transaction.date}</td>
