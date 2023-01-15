@@ -1,7 +1,7 @@
 import React from "react";
 import Transaction from "./Transaction";
 
-function TransactionsList({transactions, setTransactions, search}) {                        // destructured props passed as arguments to TransactionList component
+function TransactionsList({transactions, search}) {                        // destructured props passed as arguments to TransactionList component
   
   return (
 
