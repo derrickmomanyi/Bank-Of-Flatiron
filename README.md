@@ -32,7 +32,7 @@ As a user, I should be able to:
 JSON server used to update the transactions;
 
 
-Go to [http://localhost:8001/transactions](http://localhost:8001/transactions) 
+Go to "https://json-mock-transactions.onrender.com/transactions" . Thia is a deployed server
 
 ## Explanation
 

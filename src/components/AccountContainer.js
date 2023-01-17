@@ -11,7 +11,7 @@ function AccountContainer() {
   const [search, setSearch] = useState("")
 
   useEffect(() => {                                                                //useEffect hook to fetch our data from server
-    fetch("http://localhost:8001/transactions")
+    fetch("https://json-mock-transactions.onrender.com/transactions")
     .then((res)=> res.json())
     .then((data)=> setTransactions(data))
   }, [])

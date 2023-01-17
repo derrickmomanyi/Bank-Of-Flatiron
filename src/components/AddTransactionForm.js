@@ -16,7 +16,7 @@ function AddTransactionForm({ addTransaction }) {                       // destr
         amount: amount,
       };
   
-      fetch("http://localhost:8001/transactions", {                              // post method to add transactions to our database
+      fetch("https://json-mock-transactions.onrender.com/transactions", {                              // post method to add transactions to our database
         
       method: "POST",
         
